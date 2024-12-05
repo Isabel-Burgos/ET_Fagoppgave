@@ -8,7 +8,6 @@ Sist oppdatert: 05.12.24
 
 # Table of contents
 1. [Hvordan bygge applikasjonen](#hvordan-bygge-applikasjonen)
-    1. [Streamlit](#streamlit)
 2. [Hvordan kjøre applikasjonen](#hvordan-kjøre-applikasjonen)
 3. [Informasjon](#informasjon)
 
@@ -16,7 +15,7 @@ Sist oppdatert: 05.12.24
 # Hvordan bygge applikasjonen
 For å løse denne oppgaven har jeg tatt i bruk rammeverket Streamlit ([docs](https://docs.streamlit.io/)), et redskap for å bygge datadrevne webapplikasjoner. Streamlit gir god støtte til frontend utviklingen, og tilbyr interaktive grensesnitt. Streamlit opererer med Pandas dataframes ([docs](https://pandas.pydata.org/docs/reference/frame.html)) for prosessering av data.
 
-I dette tilfellet har jeg hovedsaklig tatt i bruk Streamlit' ['basic concepts'](https://docs.streamlit.io/get-started/fundamentals/main-concepts), men det er også mulig å legge til mer [avanserte prosesser](https://docs.streamlit.io/get-started/fundamentals/advanced-concepts), som caching, etc.
+I dette tilfellet har jeg hovedsaklig tatt i bruk Streamlit's ['basic concepts'](https://docs.streamlit.io/get-started/fundamentals/main-concepts), men det er også mulig å legge til mer [avanserte prosesser](https://docs.streamlit.io/get-started/fundamentals/advanced-concepts), som caching, etc.
 
 # Hvordan kjøre applikasjonen
 For å forsikre at man har de nødvendige rammeverkene, bør man kjøre følgende kode i cmd-line:
