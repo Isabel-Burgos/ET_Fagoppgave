@@ -10,7 +10,7 @@ Sist oppdatert: 05.12.24
 1. [Hvordan bygge applikasjonen](#hvordan-bygge-applikasjonen)
     1. [Streamlit](#streamlit)
 2. [Hvordan kjøre applikasjonen](#hvordan-kjøre-applikasjonen)
-3. [Informasjon](informasjon)
+3. [Informasjon](#informasjon)
 
 
 # Hvordan bygge applikasjonen
