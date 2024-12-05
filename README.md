@@ -18,7 +18,7 @@ For å løse denne oppgaven har jeg tatt i bruk rammeverket Streamlit ([docs](ht
 I dette tilfellet har jeg hovedsaklig tatt i bruk Streamlit's ['basic concepts'](https://docs.streamlit.io/get-started/fundamentals/main-concepts), men det er også mulig å legge til mer [avanserte prosesser](https://docs.streamlit.io/get-started/fundamentals/advanced-concepts), som caching, etc.
 
 # Hvordan kjøre applikasjonen
-For å forsikre at man har de nødvendige rammeverkene, bør man kjøre følgende kode i cmd-line:
+For å forsikre at man har de nødvendige rammeverkene bør man kjøre følgende kode i cmd-line:
 ```python
 pip install -r /path/to/requirements.txt
 ```
@@ -31,7 +31,7 @@ For å kjøre programfil fra cmd-line og åpne webapplikasjonen:
 streamlit run main.py
 ```
 
-Filen fortsetter å kjøre frem til man avslutter prosessen med 'Ctrl+c'. Mens programmet kjører vil endringer i koden ummiddelbart kunne lastes opp i web applikasjonen når de relevante filene er lagret. 
+Filen fortsetter å kjøre frem til man avslutter prosessen med 'Ctrl+c'. Mens programmet kjører vil endringer i koden umiddelbart kunne lastes opp i web applikasjonen når de relevante filene er lagret. 
 
 # Informasjon
 ## Antakelser
@@ -39,6 +39,7 @@ Jeg har gjort følgende antagelser under utviklingen av løsningen.
 - ccnummer står for credit card number
 - lat/long koordinater er hvor kortet er blitt brukt
 - resterende informasjon er personlig informasjon om eieren av kortet
+- skulle en annen data-fil bli lastet opp i applikasjonen, vil den ha samme format som `45784.csv`
 
 ## Fremgangsmåte
 Jeg valgte å lage to sider i applikasjonen. 
