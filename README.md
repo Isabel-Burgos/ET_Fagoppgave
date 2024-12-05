@@ -26,7 +26,10 @@ pip install -r /path/to/requirements.txt
 For å kjøre programfil fra cmd-line og åpne webapplikasjonen:
 1. Sett working directory til `.../ET_Fagoppgave/src`
 
-2. Kjør i cmd-line ```python streamlit run main.py```. Dette vil åpne webapplikasjonen i din browser.
+2. Kjør følgene i cmd-line. Dette vil åpne webapplikasjonen i din browser.
+```python
+streamlit run main.py
+```
 
 Filen fortsetter å kjøre frem til man avslutter prosessen med 'Ctrl+c'. Mens programmet kjører vil endringer i koden ummiddelbart kunne lastes opp i web applikasjonen når de relevante filene er lagret. 
 
