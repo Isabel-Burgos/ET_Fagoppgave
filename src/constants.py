@@ -1,1 +1,1 @@
-dataFile = "../data/45784.csv"
+dataFile = "data/45784.csv"
