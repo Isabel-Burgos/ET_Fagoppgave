@@ -100,7 +100,8 @@ def duplicatesByColumns(dataFrame, columns):
 
     Returns
     -------
-    A new data frame containing any rows which has duplicate values in the assessed columns
+    A new data frame containing any rows which has duplicate values in the assessed columns.
+    Rows are sortet based on values in 'columns'.
     '''
     sharedCCDataFrame = dataFrame[dataFrame.duplicated(subset=columns, keep=False)]
     return sharedCCDataFrame.sort_values(columns)
