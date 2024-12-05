@@ -46,7 +46,7 @@ Jeg valgte å lage to sider i applikasjonen.
 
 Hovedsiden viser brukeren datasettet, samt gir brukeren mulighet til å filtrere og sortere dataene. Er det ønsket kan brukeren her også søke etter konkrete verdier i datasettet. Søket kan bli gjort i hele datasettet eller i en spesifikk kolonne.
 
-Statistikk og analyse er lagt i en egen side i applikasjonen. Her har jeg lagt fokus på informasjon jeg mener ville være mest relevant ut i fra datasettet.
+Statistikk og analyse er lagt i en egen side i applikasjonen. Her har jeg lagt fokus på informasjon jeg mener ville være mest relevant ut i fra datasettet. Flere av analysene er vist som tabeller. Er det ikke innhold i tabellen betyr det at analysen ikke ga utslag, i.e. at situasjonen ikke oppstod i datasettet.
 1. Manglende verdier: Manglende verdier vil påvirke muligheten til å analyserer datasettet og kan også peke mot at noe er galt.
 2. Delte kredittkortnumre: Skulle det være slik at flere personer er registrert på samme kredittkort kan dette gi innsikt i eventuelle familiemedlemmer, samarbeidspartnere, eller nettverk.
 3. Personer med samme navn: Dette kan så klart være forskjellige personer, men det er også mulig at det er noen som forsøker å drive med svindel, el. Derfor vil det være verdt å undersøke. Man kan i tillegg sjekke om andre verdier i de relevante radene i datasettet er tilsvarende.
