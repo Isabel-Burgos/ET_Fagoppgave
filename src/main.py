@@ -1,14 +1,21 @@
 import streamlit as st
 import pandas as pd
-import argparse
 import os
-# TODO: make sure that all imports are covered in requirements.txt
+import constants
 
-def setup(args):
-    st.title("Dataset")
+### -- Main page -- ###
 
-    try: # TODO: look in to if it is common to have all code within a try/catch
-        dataFrame = pd.read_csv(args.data_file)
+st.sidebar.markdown("# Dataset")
+
+def loadData():
+    try:
+        dataFrame = pd.read_csv(constants.dataFile)
+    except FileNotFoundError:
+        st.write(f"File \"{os.path.abspath(constants.dataFile)}\" does not exist.")
+
+    else:
+        st.header('Dataset')
+        st.write('Here you can filter, sort, and search for specific values in the dataset.')
         st.write("Click on any header to sort data")
 
         st.subheader('Overview')
@@ -16,7 +23,7 @@ def setup(args):
         c1,c2 = st.columns(2) # create columns to modify app layout
         
         ## allow user to filter data in app
-        defaultChoice = '\'Choose a value\''
+        defaultChoice = '\'None\''
         columns = [defaultChoice]
         columns.extend(dataFrame.columns.to_list())
 
@@ -37,33 +44,30 @@ def setup(args):
         else:
             st.dataframe(data=dataFrame)
                 
-
         ## Create search option
         st.subheader("Search dataset")
-        searchValue = st.text_input("Search for any value")
+        st.write('Note: Search is case sensitive')
+        c1,c2 = st.columns(2)
+        with c1:
+            searchValue = st.text_input("Search for any value")
+        with c2:
+            chosenColumn = st.selectbox("Select which column to search", columns)
         if searchValue:
-            # create new dataset
             searchDataFrame = pd.DataFrame(columns=columns[1:]) # skipping first element because it is defaultChoice
             # find all rows with value and add all relevant rows to searchDataFrame
-            for col in columns[1:]:
-                searchDataFrame = pd.concat([searchDataFrame, dataFrame[ dataFrame[col].astype(str).str.contains(searchValue) ]])
+            if(chosenColumn != defaultChoice):
+                searchDataFrame = pd.concat([searchDataFrame, dataFrame[ dataFrame[chosenColumn].astype(str).str.contains(searchValue) ]])
                 # change back to original datatype
-                searchDataFrame[col] = searchDataFrame[col].astype({col: dataFrame.dtypes[col]})
-            # remove duplicate entries, in the case that mulitple columns gave search result
-            # NOTE: because of 'seq' column this is possible without removing any potentially relevant information
-            searchDataFrame = searchDataFrame.drop_duplicates()
+                searchDataFrame[chosenColumn] = searchDataFrame[chosenColumn].astype({chosenColumn: dataFrame.dtypes[chosenColumn]})
+            else:
+                for col in columns[1:]:
+                    searchDataFrame = pd.concat([searchDataFrame, dataFrame[ dataFrame[col].astype(str).str.contains(searchValue) ]])
+                    # change back to original datatype
+                    searchDataFrame[col] = searchDataFrame[col].astype({col: dataFrame.dtypes[col]})
+                # remove duplicate entries, in the case that mulitple columns gave search result
+                # NOTE: because of 'seq' column this is possible without removing any potentially relevant information
+                searchDataFrame = searchDataFrame.drop_duplicates()
             st.dataframe(searchDataFrame)
-
-        ## add statistics
-        
-
-    except FileNotFoundError:
-        print(f"File \"{os.path.abspath(args.data_file)}\" does not exist.")
-
+    
 if __name__ == '__main__':
-    # TODO: maybe reduntant with all this. The point is to use this file.
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--data-file', default="../data/45784.csv", type=str,
-        help='path to .csv file containing data to be processed')
-    args = parser.parse_args()
-    setup(args)
+    loadData()
