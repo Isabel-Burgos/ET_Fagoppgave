@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import os
 import constants
 
 ### -- Main page -- ###
@@ -11,7 +10,7 @@ def loadData():
     try:
         dataFrame = pd.read_csv(constants.dataFile)
     except FileNotFoundError:
-        st.write(f"File \"{os.path.abspath(constants.dataFile)}\" does not exist.")
+        st.write(f"File \"{constants.dataFile}\" does not exist.")
 
     else:
         st.header('Dataset')

@@ -10,7 +10,7 @@ def loadStatistics():
     try:
         dataFrame = pd.read_csv(constants.dataFile)
     except FileNotFoundError:
-        st.write(f"File \"{os.path.abspath(constants.dataFile)}\" does not exist.")
+        st.write(f"File \"{constants.dataFile}\" does not exist.")
 
     else:
         st.header("Statistics and Analysis")
